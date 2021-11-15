@@ -5,7 +5,7 @@ function App() {
         <div className="row s-header__nav-wrap">
           <nav className="s-header__nav">
             <ul>
-              <li className="current"><a className="smoothscroll" href="#hero">Home</a></li>
+              <li className="current"><a className="smoothscroll" href="#home">Home</a></li>
               <li><a className="smoothscroll" href="#about">About</a></li>
               <li><a className="smoothscroll" href="#resume">Resume</a></li>
               <li><a className="smoothscroll" href="#portfolio">Works</a></li>
@@ -20,7 +20,7 @@ function App() {
         </a>
       </header>
 
-      <section id="hero" className="s-hero target-section">
+      <section id="home" className="s-hero target-section">
 
         <div className="s-hero__bg rellax" data-rellax-speed="-7"></div>
 
@@ -32,8 +32,9 @@ function App() {
               <h1>I'm Dony Wijaya.</h1>
 
               <h3>
-                I'm a Jakarta based <span>Web Developer</span> and <span>Instructor</span> creating awesome and
-                effective visual identities for companies of all sizes around the globe. Let's <a className="smoothscroll" href="#about">start scrolling</a>
+                I am a <span>Web developer</span> with industry experience building websites and web applications.
+                I specialize in <span>Python (Django/Flask)</span>, <span>JavaScript (React.js)</span> and have professional experience working with <span>Go</span> and <span>PHP</span>.
+                Let's <a className="smoothscroll" href="#about">start scrolling</a>
                 and learn more <a className="smoothscroll" href="#about">about me</a>.
               </h3>
 

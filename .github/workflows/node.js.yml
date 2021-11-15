@@ -38,7 +38,7 @@ jobs:
         run: yarn
 
       - name: "Testing App"
-        run: test
+        run: yarn test
 
       - name: "Github Pages Deployment"
         run: |

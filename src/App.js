@@ -38,12 +38,12 @@ function App() {
               </h3>
 
               <div className="s-hero__content-social">
-                <a href="#0"><i className="fab fa-facebook-square" aria-hidden="true"></i></a>
+                {/* <a href="#0"><i className="fab fa-facebook-square" aria-hidden="true"></i></a>
                 <a href="#0"><i className="fab fa-twitter" aria-hidden="true"></i></a>
                 <a href="#0"><i className="fab fa-instagram" aria-hidden="true"></i></a>
                 <a href="#0"><i className="fab fa-dribbble" aria-hidden="true"></i></a>
                 <a href="#0"><i className="fab fa-behance" aria-hidden="true"></i></a>
-                <a href="#0"><i className="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a href="#0"><i className="fab fa-linkedin" aria-hidden="true"></i></a> */}
               </div>
 
             </div>

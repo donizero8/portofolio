@@ -37,6 +37,9 @@ jobs:
       - name: "Install Dependencies"
         run: yarn
 
+      - name: "Testing App"
+        run: test
+
       - name: "Github Pages Deployment"
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git

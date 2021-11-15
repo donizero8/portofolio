@@ -22,20 +22,15 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       
-    - name: Install Packages
+    - name: Install Dependencies
       uses: borales/actions-yarn@v2.3.0
       with:
-        cmd: install
+        cmd: yarn
         
     - name: Test
       uses: borales/actions-yarn@v2.3.0
       with:
         cmd: test
-
-    - name: Build
-      uses: borales/actions-yarn@v2.3.0
-      with:
-        cmd: build
     
     - name: Deploy with gh-pages
       run: |

@@ -43,8 +43,9 @@ function App() {
                 <a href="#0"><i className="fab fa-twitter" aria-hidden="true"></i></a>
                 <a href="#0"><i className="fab fa-instagram" aria-hidden="true"></i></a>
                 <a href="#0"><i className="fab fa-dribbble" aria-hidden="true"></i></a>
-                <a href="#0"><i className="fab fa-behance" aria-hidden="true"></i></a>
-                <a href="#0"><i className="fab fa-linkedin" aria-hidden="true"></i></a> */}
+                <a href="#0"><i className="fab fa-behance" aria-hidden="true"></i></a>*/}
+                <a href="https://github.com/donizero8" target="_blank"><i className="fab fa-github" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/dony-wijaya22/" target="_blank"><i className="fab fa-linkedin" aria-hidden="true"></i></a>
               </div>
 
             </div>

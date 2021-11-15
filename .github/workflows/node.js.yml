@@ -13,10 +13,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    
-    strategy:
-      matrix:
-        node-version: [16.x]
 
     steps:
     - name: Checkout
@@ -38,7 +34,6 @@ jobs:
         cmd: build
     
     - name: Deploy with gh-pages
-      uses: borales/actions-yarn@v2.3.0
       run: |
         git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
         npm run deploy -- -u "github-actions-bot <support+actions@github.com>"

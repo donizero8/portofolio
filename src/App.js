@@ -1,9 +1,24 @@
+import { useState, useEffect } from 'react';
+
 import Main from "./components/Main/Main";
 
 function App() {
+  const [isShowNav, setShowNav] = useState("0");
+
+  useEffect(() => {
+    document.addEventListener("scroll", () => {
+
+      const scrollCheck = window.scrollY > 850;
+      // if scrollY > 850 then sticky navbar
+      if (scrollCheck !== isShowNav) {
+        setShowNav(scrollCheck);
+      }
+    })
+  });
+
   return (
     <div>
-      <header className="s-header">
+      <header className={`s-header ${isShowNav ? "sticky offset scrolling" : ""}`}>
         <div className="row s-header__nav-wrap">
           <nav className="s-header__nav">
             <ul>

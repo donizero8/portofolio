@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import Main from './components/Main/Main';
 
 test('renders my name', () => {
-  render(<App />);
+  render(<Main />);
   const linkElement = screen.getByText(/Dony Wijaya/i);
   expect(linkElement).toBeInTheDocument();
 });

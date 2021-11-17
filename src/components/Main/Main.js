@@ -12,9 +12,10 @@ export default function Main() {
             <div className="row s-hero__content">
                 <div className="column">
 
-                    <div className="s-hero__content-about">
+                    <div className="s-hero__content-about animated">
 
-                        <h1>I'm Dony Wijaya.</h1>
+
+                        <h1 id="intro"><span>Hello, </span>I'm Dony.</h1>
 
                         <h3>
                             I am a <span>Web developer</span> with industry experience building websites and web applications.

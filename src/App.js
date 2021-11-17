@@ -1,16 +1,18 @@
+import Main from "./components/Main/Main";
+
 function App() {
   return (
-    <>
+    <div>
       <header className="s-header">
         <div className="row s-header__nav-wrap">
           <nav className="s-header__nav">
             <ul>
-              <li className="current"><a className="smoothscroll" href="#home">Home</a></li>
-              <li><a className="smoothscroll" href="#about">About</a></li>
-              <li><a className="smoothscroll" href="#resume">Resume</a></li>
-              <li><a className="smoothscroll" href="#portfolio">Works</a></li>
-              <li><a className="smoothscroll" href="#testimonials">Testimonials</a></li>
-              <li><a className="smoothscroll" href="#contact">Say Hello</a></li>
+              <li className="current"><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#resume">Resume</a></li>
+              <li><a href="#portfolio">Works</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+              <li><a href="#contact">Say Hello</a></li>
             </ul>
           </nav>
         </div>
@@ -20,40 +22,52 @@ function App() {
         </a>
       </header>
 
-      <section id="home" className="s-hero target-section">
+      {/* Main =========  */}
+      <Main />
 
-        <div className="s-hero__bg rellax" data-rellax-speed="-7"></div>
+      {/* About ======== */}
+      <section id="about" className="s-about target-section">
 
-        <div className="row s-hero__content">
-          <div className="column">
+        <div className="row">
+          <div className="column large-3 tab-12">
+            <img className="s-about__pic" src={process.env.PUBLIC_URL + "/public/images/avatars/dony.jpg"} alt="" />
+          </div>
+          <div className="column large-9 tab-12 s-about__content">
+            <h3>About Me</h3>
+            <p>
+              My name is Dony Wijaya I'm a Web Developer based in Jakarta ☀️.
+              I describe myself as a passionate developer who loves coding, open source, and the web platform ❤️.
 
-            <div className="s-hero__content-about">
+              Also I enjoy writing technical things ✍️ at my blog.
+            </p>
 
-              <h1>I'm Dony Wijaya.</h1>
+            <hr />
 
-              <h3>
-                I am a <span>Web developer</span> with industry experience building websites and web applications.
-                I specialize in <span>Python (Django/Flask)</span>, <span>JavaScript (React.js)</span> and have professional experience working with <span>Go</span> and <span>PHP</span>.
-                Let's <a className="smoothscroll" href="#about">start scrolling</a>
-                and learn more <a className="smoothscroll" href="#about">about me</a>.
-              </h3>
+            <div className="row s-about__content-bottom">
+              <div className="column w-1000-stack">
+                <h3>Contact Details</h3>
 
-              <div className="s-hero__content-social">
-                {/* <a href="#0"><i className="fab fa-facebook-square" aria-hidden="true"></i></a>
-                <a href="#0"><i className="fab fa-twitter" aria-hidden="true"></i></a>
-                <a href="#0"><i className="fab fa-instagram" aria-hidden="true"></i></a>
-                <a href="#0"><i className="fab fa-dribbble" aria-hidden="true"></i></a>
-                <a href="#0"><i className="fab fa-behance" aria-hidden="true"></i></a>*/}
-                <a href="https://github.com/donizero8" target="_blank" rel="noopener noreferrer"><i className="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/dony-wijaya22/" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin"></i></a>
+                <p>
+                  Dony Wijaya <br />
+                  Villa Citayam Blok C5A No. 3, Jl. Duren Baru, Desa Susukan, Kec. Bojong Gede <br />
+                  Kab. Bogor, Jawa Barat 16920 INA <br />
+                  <a href="tel:+6281319268819">+62 813 1926 8819</a> <br />
+                  <a href="mailto:donywijaya221092@gmail.com">donywijaya221092 @gmail.com</a>
+                </p>
+
               </div>
-
+              <div className="column w-1000-stack">
+                <a href="#0" className="btn btn--download">
+                  Download CV
+                </a>
+              </div>
             </div>
-
           </div>
         </div>
+
       </section>
-    </>
+
+    </div>
   );
 }
 

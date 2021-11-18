@@ -3,12 +3,11 @@ import { useState, useEffect } from 'react';
 import Main from "./components/Main/Main";
 
 function App() {
-  const [isShowNav, setShowNav] = useState("0");
+  const [isShowNav, setShowNav] = useState(false);
 
   useEffect(() => {
     document.addEventListener("scroll", () => {
-
-      const scrollCheck = window.scrollY > 850;
+      const scrollCheck = window.scrollY > 835;
       // if scrollY > 850 then sticky navbar
       if (scrollCheck !== isShowNav) {
         setShowNav(scrollCheck);

@@ -3,7 +3,7 @@ const svgStyle = {
     transform: '-ms-filter',
 };
 
-export default function Main() {
+export default function Greet() {
     return (
         <section id="home" className="s-hero target-section">
 

@@ -1,16 +1,25 @@
 import { useState, useEffect } from 'react';
 
-import Main from "./components/Main/Main";
+import Greet from "./components/Greet/Greet";
 
 function App() {
   const [isShowNav, setShowNav] = useState(false);
+  const [currentNav, setcurrentNav] = useState("greet")
 
   useEffect(() => {
+    const aboutTopOffset = document.getElementById('about').offsetTop;
+
     document.addEventListener("scroll", () => {
-      const scrollCheck = window.scrollY > 835;
-      // if scrollY > 850 then sticky navbar
+      const scrollTopPos = window.scrollY;
+      const scrollCheck = scrollTopPos > aboutTopOffset;
+
       if (scrollCheck !== isShowNav) {
         setShowNav(scrollCheck);
+        if (scrollTopPos >= aboutTopOffset) {
+          setcurrentNav('about');
+        } else {
+          setcurrentNav('greet');
+        }
       }
     })
   });
@@ -21,8 +30,8 @@ function App() {
         <div className="row s-header__nav-wrap">
           <nav className="s-header__nav">
             <ul>
-              <li className="current"><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
+              <li className={currentNav === "greet" ? "current" : ""}><a href="#greet">Home</a></li>
+              <li className={currentNav === "about" ? "current" : ""}><a href="#about">About</a></li>
               <li><a href="#resume">Resume</a></li>
               <li><a href="#portfolio">Works</a></li>
               <li><a href="#testimonials">Testimonials</a></li>
@@ -37,7 +46,7 @@ function App() {
       </header>
 
       {/* Main =========  */}
-      <Main />
+      <Greet />
 
       {/* About ======== */}
       <section id="about" className="s-about target-section">

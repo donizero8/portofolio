@@ -5,7 +5,7 @@ const svgStyle = {
 
 export default function Greet() {
     return (
-        <section id="home" className="s-hero target-section">
+        <section id="greet" className="s-hero target-section">
 
             <div className="s-hero__bg rellax" data-rellax-speed="-7"></div>
 

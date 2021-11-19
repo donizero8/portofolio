@@ -9,12 +9,17 @@ function App() {
   const [toggleMenu, setToggleMenu] = useState(false)
 
   document.addEventListener("scroll", () => {
+    console.log("scroll")
     setOffset(window.scrollY)
+    if (toggleMenu) {
+      setToggleMenu(false)
+    }
   })
 
-  // Side effect scroll
+  // Side effect offset
   useEffect(() => {
     if (offset) {
+      console.log("side effect offset")
       const aboutTopOffset = document.getElementById('about').offsetTop;
 
       const scrollCheck = offset >= aboutTopOffset;
@@ -33,6 +38,7 @@ function App() {
 
   // Side effect toggle mobile nav
   useEffect(() => {
+    console.log("side effect toggle")
     const navMobile = document.querySelector("#top")
 
     if (toggleMenu) {

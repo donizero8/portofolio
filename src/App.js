@@ -8,10 +8,14 @@ function App() {
 
   useEffect(() => {
     const aboutTopOffset = document.getElementById('about').offsetTop;
+    if (window.location.hash.length) {
+      console.log(window.location.hash)
+    }
 
     document.addEventListener("scroll", () => {
       const scrollTopPos = window.scrollY;
-      const scrollCheck = scrollTopPos > aboutTopOffset;
+      console.log(scrollTopPos);
+      const scrollCheck = scrollTopPos > aboutTopOffset - 1;
 
       if (scrollCheck !== isShowNav) {
         setShowNav(scrollCheck);
@@ -72,7 +76,6 @@ function App() {
 
                 <p>
                   Dony Wijaya <br />
-                  Villa Citayam Blok C5A No. 3, Jl. Duren Baru, Desa Susukan, Kec. Bojong Gede <br />
                   Kab. Bogor, Jawa Barat 16920 INA <br />
                   <a href="tel:+6281319268819">+62 813 1926 8819</a> <br />
                   <a href="mailto:donywijaya221092@gmail.com">donywijaya221092 @gmail.com</a>

@@ -3,30 +3,44 @@ import { useState, useEffect } from 'react';
 import Greet from "./components/Greet/Greet";
 
 function App() {
+  const [offset, setOffset] = useState(0);
   const [isShowNav, setShowNav] = useState(false);
-  const [currentNav, setcurrentNav] = useState("greet")
+  const [currentNav, setcurrentNav] = useState("greet");
+  const [toggleMenu, setToggleMenu] = useState(false)
 
+  document.addEventListener("scroll", () => {
+    setOffset(window.scrollY)
+  })
+
+  // Side effect scroll
   useEffect(() => {
-    const aboutTopOffset = document.getElementById('about').offsetTop;
-    if (window.location.hash.length) {
-      console.log(window.location.hash)
-    }
+    if (offset) {
+      const aboutTopOffset = document.getElementById('about').offsetTop;
 
-    document.addEventListener("scroll", () => {
-      const scrollTopPos = window.scrollY;
-      console.log(scrollTopPos);
-      const scrollCheck = scrollTopPos > aboutTopOffset - 1;
+      const scrollCheck = offset >= aboutTopOffset;
 
       if (scrollCheck !== isShowNav) {
         setShowNav(scrollCheck);
-        if (scrollTopPos >= aboutTopOffset) {
+        if (offset >= aboutTopOffset) {
           setcurrentNav('about');
         } else {
           setcurrentNav('greet');
         }
       }
-    })
-  });
+
+    }
+  }, [offset, isShowNav]);
+
+  // Side effect toggle mobile nav
+  useEffect(() => {
+    const navMobile = document.querySelector("#top")
+
+    if (toggleMenu) {
+      navMobile.classList.add("menu-is-open");
+    } else {
+      navMobile.classList.remove("menu-is-open");
+    }
+  }, [toggleMenu])
 
   return (
     <div>
@@ -36,15 +50,15 @@ function App() {
             <ul>
               <li className={currentNav === "greet" ? "current" : ""}><a href="#greet">Home</a></li>
               <li className={currentNav === "about" ? "current" : ""}><a href="#about">About</a></li>
-              <li><a href="#resume">Resume</a></li>
+              {/* <li><a href="#resume">Resume</a></li>
               <li><a href="#portfolio">Works</a></li>
               <li><a href="#testimonials">Testimonials</a></li>
-              <li><a href="#contact">Say Hello</a></li>
+              <li><a href="#contact">Say Hello</a></li> */}
             </ul>
           </nav>
         </div>
 
-        <a className="s-header__menu-toggle" href="#0" title="Menu">
+        <a className={`s-header__menu-toggle ${toggleMenu ? "is-clicked" : ''}`} href="#0" onClick={(e) => { setToggleMenu(!toggleMenu); e.preventDefault(); }} title="Menu">
           <span className="s-header__menu-icon"></span>
         </a>
       </header>
@@ -76,7 +90,7 @@ function App() {
 
                 <p>
                   Dony Wijaya <br />
-                  Kab. Bogor, Jawa Barat 16920 INA <br />
+                  Kab. Bogor, Jawa Barat 16920 INA <br /><br />
                   <a href="tel:+6281319268819">+62 813 1926 8819</a> <br />
                   <a href="mailto:donywijaya221092@gmail.com">donywijaya221092 @gmail.com</a>
                 </p>
@@ -93,7 +107,7 @@ function App() {
 
       </section>
 
-    </div>
+    </div >
   );
 }
 

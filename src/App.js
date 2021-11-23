@@ -82,7 +82,7 @@ function App() {
           <div className="column large-9 tab-12 s-about__content">
             <h3>About Me</h3>
             <p>
-              My name is Dony Wijaya I'm a Web Developer based in Jakarta ☀️.
+              My name is Dony Wijaya I'm a Web Developer based in Jakarta 🇮🇩.
               I describe myself as a passionate developer who loves coding, open source, and the web platform ❤️.
 
               Also I enjoy writing technical things ✍️ at my blog.

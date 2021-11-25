@@ -9,13 +9,22 @@ function App() {
   const [currentNav, setcurrentNav] = useState("greet");
   const [toggleMenu, setToggleMenu] = useState(false)
 
-  document.addEventListener("scroll", () => {
-    console.log("scroll")
-    setOffset(window.scrollY)
-    if (toggleMenu) {
-      setToggleMenu(false)
+  // Did Mount
+  useEffect(() => {
+    function setScrollY() {
+      console.log(new Date().getTime());
+      setOffset(window.scrollY)
+      if (toggleMenu) {
+        setToggleMenu(false)
+      }
+    }
+    document.addEventListener("scroll", setScrollY)
+    return () => {
+      document.removeEventListener("scroll", setScrollY);
     }
   })
+
+
 
   // Side effect offset
   useEffect(() => {
